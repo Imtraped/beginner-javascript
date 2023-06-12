@@ -29,7 +29,6 @@ ctx.stroke();
 function draw({key}) {
     // increment the hue
     hue += 10;
-    console.log(hue);
     ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -69,7 +68,6 @@ function clearCanvas() {
     canvas.classList.add('shake');
     ctx.clearRect(0,0,width,height);
     canvas.addEventListener('animationend', function() {
-        console.log('Done the shake!');
         canvas.classList.remove('shake');
     }, {once: true})
 }
