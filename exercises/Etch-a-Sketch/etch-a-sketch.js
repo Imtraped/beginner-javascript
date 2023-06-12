@@ -5,7 +5,7 @@ const ctx = canvas.getContext('2d');
 
 const shakebutton = document.querySelector('.shake');
 
-const MOVE_AMOUNT = 10;
+const MOVE_AMOUNT = 50;
 // Setup our canvas for drawing.
 // Same Names with the variables and properties.
 const {width, height} = canvas;
@@ -18,6 +18,8 @@ ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = MOVE_AMOUNT;
 
+let hue = 0;
+ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`
 ctx.beginPath(); // Start the Drawing
 ctx.moveTo(x, y);
 ctx.lineTo(x, y);
@@ -25,6 +27,10 @@ ctx.stroke();
 
 // Write a Draw function
 function draw({key}) {
+    // increment the hue
+    hue += 10;
+    console.log(hue);
+    ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
     ctx.beginPath();
     ctx.moveTo(x, y);
     // User based movement on the x and y variables.
