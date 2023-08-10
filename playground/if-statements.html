@@ -9,6 +9,21 @@
 </head>
 
 <body>
+  
+  <h2>Truthy Values</h2>
+  * 1
+  * -10
+  * anything inside of a string, if it's not empty.
+  * empty array
+  * empty object
+  
+  <h2>Falsy Values</h2>
+  * 0
+  * undefiend variable
+  * Variable set to null
+  * a variable set to `"hello" - 10` NaN
+  * empty string
+
   <script>
     const age = 100;
 
@@ -53,6 +68,33 @@
     if (wheresTheTimeMachine('lone')){
       console.log('WHERE IS ANYTHING!?');
     }
+
+    const pokemon = '';
+
+    if(pokemon) {
+      console.log('Your pokemon is healthly, but it\'s too talkativte.');
+    } else {
+      console.log('Your pokemon is- wait a minute. You don\'t have a azelf.')
+    }
+
+    let score = {};
+
+    if (score) {
+      console.log('There is a score already');
+    } else {
+      console.log('No score yet');
+    }
+
+    const values = [[], {}, -10, 1, 0, '', 'full string', ' ', undefined, NaN, null, '0️⃣', '💩'];
+
+    console.group('truthy or falsy values');
+    values.forEach(value => {
+      if (value) {
+        console.log(value, 'is truthy');
+      } else {
+        console.log(value, 'is falsy');
+      }
+    });
 
   </script>
 </body>
