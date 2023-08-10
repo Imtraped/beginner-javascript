@@ -95,6 +95,60 @@
         console.log(value, 'is falsy');
       }
     });
+    console.groupEnd();
+
+    console.clear();
+
+    const isCool = true;
+
+    if (!isCool) {
+      console.log('You are not cool.');
+    }
+
+    // Ternary
+    const count = 2;
+    /* let word;
+    if(count === 1) {
+      word = 'item';
+    } else {
+      word = 'itmes';
+    } */
+
+    // 1. Condition.
+    // 2. What to do if true.
+    // 3. what to do if false.
+    const sentence = `You have ${count} item${count === 1 ? '' : 's'} in your cart`;
+    console.log(sentence);
+
+    function showAdminBar() {
+      console.log('Showing admin bar');
+    }
+    const isAdmin = true;
+    // isAdmin ? showAdminBar() : null;
+
+    // And And Trick!
+    function check1() {
+      console.log('Running Check 1')
+      return true;
+    }
+    function check2() {
+      console.log('Running Check 2')
+      return false;
+    }
+    function check3() {
+      console.log('Running Check 3')
+      return true;
+    }
+
+    if(check1() && check2() && check3()) {
+      console.log('All Checks Passed');
+    } else {
+      console.log('Some Checks Failed');
+    }
+
+    isAdmin && showAdminBar();
+
+    if (isAdmin) { showAdminBar(); }
 
   </script>
 </body>
