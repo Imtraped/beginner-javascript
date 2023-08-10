@@ -10,9 +10,50 @@
 
 <body>
   <script>
-    if (10 > 2) {
-      console.log('Yep');
+    const age = 100;
+
+    if (age > 70) {
+      console.log('Man, I\'ve seen a lot.');
+    } else if(age > 60) {
+      console.log('Man, How I\'m I still on this earth.');
+    } else if (age > 50) {
+      console.log('Man, I\'m half-way close to the 100s.');
+    } else {
+      console.log('Man, wait what\'s my age?');
     }
+
+    function slugify(sentence, lowercase) {
+      let slug = sentence.replace(/\s/g, '-');
+      if (lowercase) {
+        return slug.toLowerCase();
+      }
+      // This's the else
+      return slug;
+    }
+
+    const name = 'Nicholas';
+    const last = 'E.'
+
+    if (name === 'Ruler' || (name === 'Nicholas' && last === 'E.')){
+      console.log('HELP! I\'M STUCK INSIDE OF AN BASEMENT!');
+    }
+
+    const alone = 'lone'
+
+    const a_waitforit = 'cyclone'.includes(alone);
+
+    if(a_waitforit){
+      console.log('A...lone, alone, alone, alone.' + '\n' + 'I GOTTA GET OUT OF HERE!');
+    }
+
+    function wheresTheTimeMachine (alone2) {
+      return 'cyclone'.includes(alone2);
+    }
+
+    if (wheresTheTimeMachine('lone')){
+      console.log('WHERE IS ANYTHING!?');
+    }
+
   </script>
 </body>
 
