@@ -9,7 +9,47 @@
 </head>
 
 <body>
+  <input type="text" name="first" value="Nicholas">
   <script>
+    const age = 2 ** 5;
+    const nicholas = {
+      age,
+      name: 'Nicholas',
+      'is-missing' : false,
+      'Has Pokemon' : true,
+      '420' : 'Yes',
+      companion : 'Shaymin',
+      clothing: {
+        shirts: 30,
+        pants: 40,
+      },
+      propertyToCheck : 'NEVER',
+      saySomething: function (greeting = 'Hey', other_words) {
+        return `${greeting} ${this.name} ${other_words}`;
+      }
+    };
+
+    nicholas.job = 'Web Developer';
+    nicholas.age = 2 ** 6;
+
+    /* const propertyToCheck = prompt('What do you want to check?');
+
+    console.log(propertyToCheck);
+
+    console.log(nicholas[propertyToCheck]); */
+
+
+    // Optional Chaining (?.) Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+/*     if (nicholas?.jobs == undefined) {
+      alert(`Notice: The jobs property has been renamed to just "job" so don't try "jobs" any more.`);
+    } */
+
+    const nameInput = document.querySelector('[name = "first"]');
+    const name = nameInput ? nameInput.value : '';
+    console.log(name);
+
+    console.log(delete nicholas.job);
+    nicholas.age = null;
 
   </script>
 </body>
