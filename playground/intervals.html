@@ -9,7 +9,54 @@
 </head>
 
 <body>
+  <script>
+    function buzzer() {
+      console.log('EEEEENNNNGGGG');
+    }
 
+    // console.log('Starting');
+    // setTimeout(buzzer, 500);
+    // console.log('Finishing');
+
+    
+    function setImmediateInterval(funcToRun, ms) {
+      // Right Away Call That Function
+      funcToRun();
+      // Run A Regular Function
+      return setInterval(funcToRun, ms);
+    }
+
+    // setImmediateInterval(buzzer, 2000);
+
+    function sayHi() {
+      console.log('Hi :)');
+    }
+
+    // setImmediateInterval(sayHi, 200);
+
+    function destory() {
+      document.body.innerHTML = `<p>This website has now been destroyed</p>`
+    }
+
+    const bombTimer = setTimeout(destory, 5000);
+
+    console.log(bombTimer);
+
+    window.addEventListener('click', function () {
+      console.log('You clicked! You saved the website!');
+      // How to stop it?
+      clearTimeout(bombTimer);
+    });
+
+    const poor_guy = setInterval(function () {
+      console.log('🪰');
+      console.log('I\'m cursed to be a fly for the rest of my life.');
+    }, 100);
+
+    setTimeout(function() {
+      clearInterval(poor_guy);
+    }, 3000)
+  </script>
 </body>
 
 </html>
