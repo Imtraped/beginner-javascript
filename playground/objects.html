@@ -19,14 +19,14 @@
       'Has Pokemon' : true,
       '420' : 'Yes',
       companion : 'Shaymin',
+      propertyToCheck : 'NEVER',
       clothing: {
         shirts: 30,
         pants: 40,
       },
-      propertyToCheck : 'NEVER',
-      saySomething: function (greeting = 'Hey', other_words) {
+      saySomething(greeting = 'Hey', other_words) {
         return `${greeting} ${this.name} ${other_words}`;
-      }
+      },
     };
 
     nicholas.job = 'Web Developer';
