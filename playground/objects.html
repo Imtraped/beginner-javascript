@@ -10,6 +10,7 @@
 
 <body>
   <input type="text" name="first" value="Nicholas">
+  <script src="https://unpkg.com/lodash"></script>
   <script>
     const age = 2 ** 5;
     const nicholas = {
@@ -48,8 +49,75 @@
     const name = nameInput ? nameInput.value : '';
     console.log(name);
 
-    console.log(delete nicholas.job);
-    nicholas.age = null;
+    /* console.log(delete nicholas.job);
+    nicholas.age = null; */
+
+    let name1 = 'nicholas';
+    let name2 = 'nicholas';
+
+    console.log(name1 === name2);
+
+    name1 = 'The\'3rice'
+    console.log(name1 === name2);
+    
+    name1 = name2;
+    console.log(name1 === name2);
+
+    name2 = name1;
+    name2 = 'the fly.';
+
+    const person1 = {
+      first: 'Mia',
+      last: 'Bouka',
+      clothing: {
+        shirts: Math.E,
+        pants: 6,
+      }
+    };
+
+    const person2 = {
+      first: 'Mia',
+      last: 'Bouka',
+    };
+
+    /* const person3 = person1;
+    person3.first = 'Akloe';
+    console.log(person3.first);
+    console.log(person1.first); */
+
+    const person3 = _.cloneDeep(person1);
+    person3.first = 'Cloe';
+
+    person3.clothing.shirts = 10 * 5;
+
+    const meatInventory = {
+      bacon: 2,
+      sausage: 3,
+      oyster: 10,
+    };
+
+    const veggieInventory = {
+      lettuce: 5,
+      tomatoes: 3,
+      oyster: 15,
+    };
+
+    const inventory = {
+      ...meatInventory,
+      ...veggieInventory,
+    };
+
+    function doStuff(data) {
+      data = 'something else';
+      console.log(data);
+    }
+    
+    function doStuff2(data) {
+      data.tomatoes = 10 ** 10;
+      console.log(data);
+    }
+
+    doStuff2(inventory);
 
   </script>
 </body>
