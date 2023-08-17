@@ -19,18 +19,63 @@
   console.log(names.length);
   console.log(names[names.length - 1]);
 
-  // Mutation Method - Changes the orignal data
+  names.push('Lyndon');
+  console.log(names);
+
+  const names2 = [...names, 'Lyndon'];
+  names.unshift('Mateo');
+  console.log(names);
+
+  const names3 = ['Mateo', ...names];
+  console.log(names3);
+
+  const bikes = ['bianchi', 'miele', 'panasonic', 'miyata'];
+
+  const newBikes = [
+    ...bikes.slice(0, 2),
+    'benotto',
+    ...bikes.slice(2),
+  ];
+  console.log(newBikes);
+
+  const newBikes2 = [
+    ...newBikes.slice(0, 3),
+    ...newBikes.slice(4),
+  ];
+  console.log(newBikes2);
+
+  //
+  const comment = [
+    {text: 'Nice Text Bro', id: 678},
+    {text: 'NTB 2: She\'s Back.', id: 679},
+    {text: 'NTB 3: He Is Coming', id: 680},
+    {text: 'NTB 4: She and He Fall In Love', id: 681},
+    {text: 'NTB 5: She and He Have A Baby.', id: 682},
+  ];
+
+  function deleteComment(id, comments) {
+    // first find the index of the item in the array.
+    // make a new array without that item in it.
+    // return our new array
+  }
+
+  /* const numbers = [1,2,3,4,5,6,7,8,9,0];
+
+  console.log(numbers);
+  numbers.splice(3, 2);
+  console.log(numbers); */
+
+  /* // Mutation Method - Changes the orignal data
   const numbers = [1,2,3,4,5,6,7,8,9,0]
 
   // Take a copy to not chnage the data.
-  const numbersReversed = [...numbers];
-  numbersReversed.reverse();
+  const numbersReversed = [...numbers].reverse();
   console.log(numbersReversed);
 
   // Immutable - Doesn't change the orignal data
   const pizzaSlice = numbers.slice(2,4);
   console.log(pizzaSlice);
-  console.log(numbers)
+  console.log(numbers); */
 </script>
 </body>
 
