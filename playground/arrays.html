@@ -11,7 +11,27 @@
 </head>
 
 <body>
+<script>
+  // Arrays are Zero-Based, MOM!
+  const names = ['Derek', 'Miguel', 'Steffan', 'Krystal', 'Bill', 'Sian', 'Ann', 'Samia', 'Tristan', 'Talia'];
 
+  console.log(names[0]);
+  console.log(names.length);
+  console.log(names[names.length - 1]);
+
+  // Mutation Method - Changes the orignal data
+  const numbers = [1,2,3,4,5,6,7,8,9,0]
+
+  // Take a copy to not chnage the data.
+  const numbersReversed = [...numbers];
+  numbersReversed.reverse();
+  console.log(numbersReversed);
+
+  // Immutable - Doesn't change the orignal data
+  const pizzaSlice = numbers.slice(2,4);
+  console.log(pizzaSlice);
+  console.log(numbers)
+</script>
 </body>
 
 </html>
