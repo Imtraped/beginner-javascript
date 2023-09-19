@@ -45,19 +45,33 @@
   console.log(newBikes2);
 
   //
-  const comment = [
-    {text: 'Nice Text Bro', id: 678},
-    {text: 'NTB 2: She\'s Back.', id: 679},
-    {text: 'NTB 3: He Is Coming', id: 680},
-    {text: 'NTB 4: She and He Fall In Love', id: 681},
-    {text: 'NTB 5: She and He Have A Baby.', id: 682},
+  const comments = [
+    {text: 'Nice Video Bro', id: 678},
+    {text: 'Bro this video is the best thing that I\'ve seen', id: 679},
+    {text: 'Whos here in 2023?', id: 680},
+    {text: 'tf is this music, I\'m trying to learn useless infomation, not playing minecraft.', id: 681},
+    {text: 'それらはいくつかの醜いドレスピースです', id: 682},
   ];
 
   function deleteComment(id, comments) {
     // first find the index of the item in the array.
+    const commentIndex = comments.findIndex(comment => comment.id === id);
     // make a new array without that item in it.
+    return [
+      ...comments.slice(0, commentIndex),
+      ...comments.slice(commentIndex + 1),
+    ]
     // return our new array
   }
+
+  const krystalIndex = names.findIndex(name => name === 'Krystal');
+  const newNamesWithOutKait = [
+    // get everything up to kait index
+    names.slice(0, krystalIndex),
+    // Everything After
+    names.slice(krystalIndex + 1)
+  ].flat();
+  console.log(newNamesWithOutKait);
 
   /* const numbers = [1,2,3,4,5,6,7,8,9,0];
 
