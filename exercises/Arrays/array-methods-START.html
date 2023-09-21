@@ -48,7 +48,7 @@
 
     // Make a function that creates a range from x to y with Array.from();
     function createRange(start, end) {
-      const range = Array.from({length: end - start + 1}, function(item, index) {
+      const range = Array.from({ length: end - start + 1 }, function (item, index) {
         return index + start;
       });
       return range;
@@ -115,7 +115,7 @@
     const isinToppings = toppings.includes('Hot Sauce');
     console.log(isinToppings);
     // add it if it's not
-    if(!isinToppings) {
+    if (!isinToppings) {
       toppings.push('Hot Sauce');
     }
     console.log(toppings);
@@ -129,10 +129,33 @@
     */
 
     // find the first rating that talks about a burger with find()
-    // find all ratings that are above 2 with filter()
-    // find all ratings that talk about a burger with filter()
-    // Remove the one star rating however you like!
+    function findByWord(word) {
+      return function(singleFeedback) {
+        return singleFeedback.comment.includes(word);
+      }
+    }
 
+    const burgRating = feedback.find(findByWord('burg'));
+    const smootieRating = feedback.find(findByWord('Smoothie'));
+
+    console.log(burgRating);
+
+    // find all ratings that are above 2 with filter()
+    function filerByMinRating(minRating) {
+      return function(singleFeedback) {
+        return singleFeedback.rating > minRating
+      }
+    }
+    const goodReviews = feedback.filter(filerByMinRating(4));
+    console.table(goodReviews);
+
+    // find all ratings that talk about a burger with filter()
+    const burgRatings = feedback.filter(findByWord('burg'));
+    console.table(burgRatings);
+
+    // Remove the one star rating however you like!
+    const legitRatings = feedback.filter(single => single.rating === 1);
+    console.table(legitRatings);
     // check if there is at least 5 of one type of meat with some()
     // make sure we have at least 3 of every meat with every()
     // sort the toppings alphabetically with sort()
