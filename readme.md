@@ -8,6 +8,8 @@ This's also a useful reference as well.
 
 I'm on the 9th unit. (60% Done!)
 
-I've finished the 48th Video. (56% Done!)
+There's 6 units left. (40% Left!)
 
-There's 37 left to go. (44% Left!)
+I've finished the 49th Video. (57.6% Done!)
+
+There's 36 left to go. (42.4% Left!)

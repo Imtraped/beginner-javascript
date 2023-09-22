@@ -205,7 +205,13 @@
       // get thier birthday
       // figure out how old they are
       // return thier full name and bday in an object
-    })
+      return {
+        age,
+        name: `${person.names.first} ${person.names.last}`,
+      }
+    });
+
+    console.table(cleanPeople);
   </script>
 </body>
 
