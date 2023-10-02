@@ -212,6 +212,12 @@
     });
 
     console.table(cleanPeople);
+    const over40 = cleanPeople.filter(person => person.age > 40);
+    console.table(over40);
+
+    if(over40.length) {
+      console.log(`There are some people over 40.`);
+    }
   </script>
 </body>
 
