@@ -218,6 +218,23 @@
     if(over40.length) {
       console.log(`There are some people over 40.`);
     }
+
+    function findById(id) {
+      return function isStudent(student) {
+        return student.id === id;
+      }
+    };
+
+    function findByProp(prop, propWeAreLookingFor) {
+      return function isStudent(student) {
+        return student[prop] === propWeAreLookingFor;
+      }
+    }
+
+    const student = students.find(findByProp('id', '565a'));
+    const student2 = students.find(findByProp('first_name', 'Micki'));
+    console.log(student);
+    console.log(student2);
   </script>
 </body>
 
