@@ -40,7 +40,14 @@ Very little is known about nihonium, as it has only been made in very small amou
     .map(lowercase) // Convert every letter to lowercase
     .reduce(instanceCounter, {})
 
-    console.log(result);
+    function sortByValue(a , b) {
+      return a[1] - b[1];
+    }
+
+    const sortedResult = Object
+    .entries(result)
+    .sort(sortByValue)
+    console.log(sortedResult);
 
 
   </script>
