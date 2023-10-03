@@ -6,10 +6,10 @@ JavaScript becoming a useful language that I love to learn and play around with.
 
 This's also a useful reference as well.
 
-I'm on the 9th unit. (60% Done!)
+Ok, I'm done with the percentages of how far I've done.
 
-There's 6 units left. (40% Left!)
+So, the deal is that I've been working hard to get this far, however, updates to this are going to be less frequent then before.
 
-I've finished the 51st Video. (60% Done!)
+This repository is not going to have activity on it for periods of time.
 
-There's 33 left to go. (40% Left!)
+(At least, I have new BFDIA episodes to look forwarded to now.)
