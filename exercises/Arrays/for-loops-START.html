@@ -12,13 +12,47 @@
   <script>
     const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
 
-    const name = 'Wes Bos';
+    const name = 'Nicholas is a 🐝👪🏻🎅🏻👩‍👩‍👧‍👦🕷';
+
+    const memememe = {
+      age: 'Why do you care?',
+      name: 'You don\'t need to know',
+      cool: 'No.'
+    }
 
     // For
+    // for(let i = 0; i < numbers.length; i++) {
+    //   console.log(numbers[i]);
+    // }
 
     // For of
+    for (const letter of name) {
+      console.log(letter);
+    }
 
-    // For in
+    for(const number of numbers) {
+      console.log(number);
+    }
+    
+    // For in - used for looping over keys of an object
+    for(const prop in memememe) {
+      console.log(prop);
+    }
+
+    const baseHumanStats = {
+      feet: 2,
+      arms: 2,
+      eyes: 2,
+      head: 1,
+    };
+
+    function Human(name) {
+      this.name = name;
+    }
+
+    Human.prototype = baseHumanStats;
+
+    const wemakePeople = new Human('Nichoals')
 
     // While Loop
   </script>
