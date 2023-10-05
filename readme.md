@@ -15,5 +15,6 @@ This repository is not going to have activity on it for periods of time.
 ## Face_Detection_Censorship
 
 1. Turn on the Experimental Web Platform features in Chrome.
-2. You have to run ```npm install```, ```npm start```
-3. Make sure that your computer **has** a camera.
+2. Check for Node.js, and npm with ```node -v```, ```npm -v```
+3. You have to run ```npm install```, ```npm start```
+4. Make sure that your computer **has** a camera.
