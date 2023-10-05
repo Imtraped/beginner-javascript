@@ -12,4 +12,8 @@ So, the deal is that I've been working hard to get this far, however, updates to
 
 This repository is not going to have activity on it for periods of time.
 
-(At least, I have new BFDIA episodes to look forwarded to now.)
+## Face_Detection_Censorship
+
+1. Turn on the Experimental Web Platform features in Chrome.
+2. You have to run ```npm install```, ```npm start```
+3. Make sure that your computer **has** a camera.
