@@ -52,9 +52,24 @@
 
     Human.prototype = baseHumanStats;
 
-    const wemakePeople = new Human('Nichoals')
+    const wemakePeople = new Human('Nichoals');
+
+    console.log(Object.entries(wemakePeople));
+
+    for(const prop in wemakePeople) {
+      console.log(prop);
+    }
 
     // While Loop
+    let memes = `funny`;
+    let i = 1;
+    while(memes === `funny`) {
+      console.log('Memes are funny');
+      i++;
+      if(i > 100) {
+        memes = `outdated, unfunny.`
+      }
+    }
   </script>
 </body>
 
