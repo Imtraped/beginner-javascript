@@ -3,5 +3,22 @@
 // it's possible that it won't work for you at the moment.
 
 const video = document.querySelector('.webcam');
+
 const canvas = document.querySelector('.video');
+const ctx = canvas.getContext('2d');
+
 const faceCanvas = document.querySelector('.face');
+const faceCtx = canvas.getContext('2d');
+
+const faceDetector = new window.FaceDetector();
+
+// Write a function that will populate the users video
+
+function populateVideo() {
+    const stream = navigator.mediaDevices.getUserMedia({
+        video: {width: 1280, height: 720}
+    });
+    console.log(stream);
+}
+
+console.log(populateVideo)
