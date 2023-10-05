@@ -1,17 +1,23 @@
 // The face detection does not work on all browsers and operating systems.
 // If you are getting a `Face detection service unavailable` error or similar,
 // it's possible that it won't work for you at the moment.
-
 const video = document.querySelector('.webcam');
-
 const canvas = document.querySelector('.video');
 const ctx = canvas.getContext('2d');
 const faceCanvas = document.querySelector('.face');
 const faceCtx = faceCanvas.getContext('2d');
-
 const faceDetector = new window.FaceDetector();
-const SIZE = 10;
-const SCALE = 1.35;
+const optionsInputs = document.querySelectorAll('.controls input[type = "range"]');
+
+const options = {
+    SIZE: 10,
+    SCALE: 1.35
+}
+function handleOption(event) {
+    const {value, name} = event.currentTarget;
+    options[name] = parseFloat(value)
+}
+optionsInputs.forEach(input => input.addEventListener('input', handleOption));
 
 // Write a function that will populate the users video
 
@@ -58,18 +64,18 @@ function censor({boundingBox: face}) {
         // 4 Draw args
         face.x, // Where should we start drawing the x and y?
         face.y,
-        SIZE,
-        SIZE,
+        options.SIZE,
+        options.SIZE,
     );
     // Draw the small face back on, but scale up
-    const width = face.width * SCALE;
-    const height = face.height * SCALE;
+    const width = face.width * options.SCALE;
+    const height = face.height * options.SCALE;
     faceCtx.drawImage(
         faceCanvas, // Source
         face.x,
         face.y,
-        SIZE,
-        SIZE,
+        options.SIZE,
+        options.SIZE,
         // Drawing Args
         face.x (width - face.width) / 2,
         face.y (height - face.height) / 2,
