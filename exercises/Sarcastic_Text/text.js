@@ -20,10 +20,21 @@ const filters = {
     },
     funky(letter) {
         // First check if there is a funky letter for this case
-
+        let funkyLetter = funkyLetters[letter];
+        if (funkyLetter) return funkyLetter;
         // if there is not check if there's a lowercase version.
+        funkyLetter = funkyLetters[letter.toLowerCase()];
+        if (funkyLetter) return funkyLetter;
+        // if there is nothing, return the regular letter.
+        return letter;
     },
-    unable() {}
+    unable(letter) {
+        const random = Math.floor(Math.random() * 3);
+        if (letter === ' ' && random === 2) {
+            return '...';
+        }
+        return letter;
+    }
 };
 
 function transformText(text) {
@@ -35,3 +46,8 @@ function transformText(text) {
 }
 
 textarea.addEventListener('input', e => transformText(e.target.value));
+
+filterInputs.forEach(input =>
+    input.addEventListener('input', () => {
+    transformText(textarea.value);
+}));
