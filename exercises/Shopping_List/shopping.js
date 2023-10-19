@@ -6,13 +6,11 @@ const items = [];
 
 function handleSubmit(e) {
     e.preventDefault();
-    console.log('submitted the item, too bad it\'s useless.');
-    console.log(e.currentTarget.item);
     const name = e.currentTarget.item.value;
     // If it's empty, then don't submit it.
     if(!name) return;
     const item = {
-        name: name,
+        name,
         id: Date.now(),
         complete: false,
     };
@@ -21,7 +19,8 @@ function handleSubmit(e) {
     console.log(`There are now ${items.length} in your state`);
     // Clear the form
     e.target.reset();
-    displayItems();
+    // fire off a custom event that will tell you that the items have been updated.
+    list.dispatchEvent(new CustomEvent('itemsUpdated'));
 };
 
 function displayItems() {
@@ -34,4 +33,23 @@ function displayItems() {
     list.innerHTML = html;
 }
 
+function mirrorToLocalStorage() {
+    console.info('Saving items to localstorage');
+    localStorage.setItem('items', JSON.stringify(items));
+}
+
+function restoreFromLocalStorage() {
+    console.info(`Restoring from LS`);
+    // Pull the items from LS
+    const lsItems = JSON.parse(localStorage.getItem('items'));
+    if(lsItems.length) {
+        items.push(...lsItems);
+        list.dispatchEvent(new CustomEvent('itemsUpdated'));
+    }
+}
+
 shoppingForm.addEventListener('submit', handleSubmit);
+list.addEventListener('itemsUpdated', displayItems);
+list.addEventListener('itemsUpdated', mirrorToLocalStorage);
+
+restoreFromLocalStorage();
