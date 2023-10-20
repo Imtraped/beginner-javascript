@@ -21,12 +21,14 @@ function Gallery(gallery) {
 
         window.addEventListener('keyup', handleKeyUp);
         nextButton.addEventListener('click', showNextImage);
+        prevButton.addEventListener('click', showPrevImage);
     };
 
     function closeModal() {
         modal.classList.remove('open');
         window.removeEventListener('keyup', handleKeyUp);
         nextButton.removeEventListener('click', showNextImage);
+        prevButton.removeEventListener('click', showPrevImage);
 
     };
 
@@ -37,12 +39,18 @@ function Gallery(gallery) {
     };
 
     function handleKeyUp(event) {
-        if (event.key === 'Escape') closeModal();
+        if (event.key === 'Escape') return closeModal();
+        if (event.key === 'ArrowRight') return showNextImage();
+        if (event.key === 'ArrowLeft') return showPrevImage();
     };
 
     function showNextImage() {
+        showImage(currentImage.nextElementSibling || gallery.firstElementChild);
+    };
 
-    }
+    function showPrevImage() {
+        showImage(currentImage.previousElementSibling || gallery.lastElementChild);
+    };
 
     function showImage(el) {
         if (!el) {
@@ -59,6 +67,13 @@ function Gallery(gallery) {
     };
 
     images.forEach(image => image.addEventListener('click', e => showImage(e.currentTarget)));
+    images.forEach(image => {
+        image.addEventListener('keyup', e => {
+            if(e.key === 'Enter') {
+                showImage(e.currentTarget);
+            }
+        });
+    })
 
     modal.addEventListener('click', handleClickOutside);
 };
